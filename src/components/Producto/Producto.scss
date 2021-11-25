@@ -1,0 +1,28 @@
+.imagen {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  background-color: rgb(224, 223, 223);
+  box-shadow: 5px 5px 5px rgb(136, 135, 135);
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 5%;
+}
+.imagen img {
+  width: 100%;
+}
+.butom {
+  display: flex;
+  justify-content: space-around;
+  margin: 4%;
+}
+.butom .delete {
+}
+.butom .delete:hover {
+  padding: 3px;
+  background-color: yellow;
+}
+.butom .edit:hover {
+  padding: 3px;
+  background-color: yellow;
+}
