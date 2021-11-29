@@ -1,12 +1,13 @@
-@import '../../../style/App.scss';
-
+@import "../../../style/App.scss";
+.color {
+  color: rgb(153, 153, 153);
+}
 @media screen and (max-width: 990px) {
   .big__title {
     width: 100%;
     text-align: center;
   }
 }
-
 
 @media screen and (max-width: 400px) {
   .big__title {

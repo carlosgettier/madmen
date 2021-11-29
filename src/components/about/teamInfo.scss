@@ -1,4 +1,4 @@
-@import '../../style/App.scss';
+@import "../../style/App.scss";
 
 .team__info {
   max-width: 370px;
@@ -12,9 +12,12 @@
 
   h4 {
     padding-bottom: 20px;
+    color: rgb(98, 171, 173);
+    font-size: 25px;
   }
   p {
     padding-bottom: 20px;
+    color: white;
   }
   p:last-child {
     cursor: pointer;

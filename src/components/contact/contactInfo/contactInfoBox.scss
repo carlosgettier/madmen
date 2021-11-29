@@ -1,5 +1,4 @@
-@import '../../../style/App.scss';
-
+@import "../../../style/App.scss";
 
 .contact__info-box {
   width: 100%;
@@ -13,7 +12,8 @@
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 20px;
     line-height: 2rem;
+    color: white;
   }
 }

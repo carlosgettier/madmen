@@ -35,7 +35,7 @@ const mobileNav = (props) => (
             duration={500}
             onClick={props.closeMobileMenu}
           >
-            WORK
+            TRABAJOS
           </Link>
         </li>
         <li className="flex-center">
@@ -48,10 +48,10 @@ const mobileNav = (props) => (
             duration={500}
             onClick={props.closeMobileMenu}
           >
-            ABOUT
+            NOSOTROS
           </Link>
         </li>
-        <li className="flex-center">
+        {/* <li className="flex-center">
           <Link
             activeClass="active-link"
             to="blog"
@@ -63,7 +63,7 @@ const mobileNav = (props) => (
           >
             BLOG
           </Link>
-        </li>
+        </li> */}
         <li className="flex-center">
           <Link
             activeClass="active-link"
@@ -74,7 +74,7 @@ const mobileNav = (props) => (
             duration={500}
             onClick={props.closeMobileMenu}
           >
-            CONTACT
+            CONTACTOS
           </Link>
         </li>
       </ul>

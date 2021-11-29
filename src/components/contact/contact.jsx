@@ -90,7 +90,7 @@ class Contact extends React.Component {
     let submitButtonRender = (
       <div className="small__button">
         <button aria-label="send message" type="submit" value="Send Message">
-          Send Message
+          Enviar
         </button>
       </div>
     );
@@ -113,21 +113,21 @@ class Contact extends React.Component {
       <div id="contact">
         {modalRender}
         <div className="wrapper">
-          <Title title="CONTACT US." />
-          <p className="font12">
+          <Title title="CONTACTO" />
+          <p className="contacto-p">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt<br></br>ut labore et dolore magna aliqua.
           </p>
 
           <Row className="padding40">
             <Col md={12} lg={6}>
               <form id="contact-form" onSubmit={this.handleSubmit}>
-                <h4 className="font30 weight800 padding30">Send Us Message.</h4>
-                <input type="text" placeholder="Name" required name="name" value={this.state.name} onChange={this.inputHandler} />
+                <h4 className="font30 weight800 padding30  contacto-h4">Escribenos.</h4>
+                <input type="text" placeholder="Nombre" required name="name" value={this.state.name} onChange={this.inputHandler} />
                 <input type="email" placeholder="Email" required name="email" value={this.state.email} onChange={this.inputHandler} />
                 <textarea
                   rows="6"
                   cols="50"
-                  placeholder="Message..."
+                  placeholder="Mensaje..."
                   required
                   name="message"
                   value={this.state.message}

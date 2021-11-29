@@ -13,11 +13,11 @@ const hero = () => (
       <Row>
         <Col md={12} lg={6}>
           <div className="hero-info">
-            <h1 className="weight800 font60">Hola!!!</h1>
-            <h1 className="weight800 font60">
+            <h1 className="weight800 font60 color">Hola!!!</h1>
+            <h1 className="weight800 font60 color">
               Somos Madmen
             </h1>
-            <p className="font12">
+            <p className="font19">
               Somos una agencia de gestión comunicacional. Creamos propuestas trascendentes convencidos de que la generación de un discurso, es tan importante como el soporte, donde ese discurso necesita establecerse para producir efectividad y eficiciencia.
             </p>
             <Button label="ESCRIBENOS" target={"contact"} />
