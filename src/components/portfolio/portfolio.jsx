@@ -6,11 +6,27 @@ import "./portfolio.scss";
 //Assets
 import Arrow from "../../assets/portfolio/arrow.svg";
 import Preview1 from "../../assets/portfolio/project01/trb.jpg";
-import Preview2 from "../../assets/portfolio/project02/estudiastandup.jpg";
-import Preview3 from "../../assets/portfolio/project03/gardelitos.jpg";
+import Preview2 from "../../assets/portfolio/project02/neba.jpg";
+import Preview3 from "../../assets/portfolio/project03/matrix.jpg";
 import Preview4 from "../../assets/portfolio/project04/dread.jpg";
 import Preview5 from "../../assets/portfolio/project05/canoura.jpg";
 import Preview6 from "../../assets/portfolio/project06/luckylion.jpg";
+import Preview9 from "../../assets/portfolio/project09/latigo.jpg";
+import Preview10 from "../../assets/portfolio/project010/hamburgesa.jpg";
+
+import Preview11 from "../../assets/portfolio/project011/gulf.png";
+import Preview12 from "../../assets/portfolio/project012/gulf.jpg";
+
+import archivo from "../../assets/audios/Gulf.mp3"
+import archivo1 from "../../assets/audios/Falic.mp3"
+import archivo2 from "../../assets/portfolio/project03/imagenG.jpg"
+import archivo3 from "../../assets/audios/Matrix.mp3"
+import archivo4 from "../../assets/audios/jingle.mp3"
+import archivo9 from "../../assets/video/WhatsApp.mp4"
+import archivo10 from "../../assets/portfolio/project010/hamb2.jpg"
+import archivo11 from "../../assets/video/WhatsApp.mp4"
+import archivo12 from "../../assets/portfolio/project012/gulfCalle.png"
+
 //Components
 import Button from "../ui-components/button/button";
 import Title from "../ui-components/title/title";
@@ -25,32 +41,38 @@ class Portfolio extends React.Component {
         {
           id: "1",
           preview: Preview1,
-          title: "Lamp",
-          tag: "branding",
+          title: "FALIC",
+          tag: "radio",
+          arc: archivo1
         },
         {
           id: "2",
           preview: Preview2,
-          title: "Smartwatch",
-          tag: "web",
+          title: "neba",
+          tag: "via",
+          arc: archivo2
         },
         {
           id: "3",
           preview: Preview3,
-          title: "Speakerphone",
-          tag: "illustrations",
+          title: "matrix",
+          tag: "radio",
+          arc: archivo3
+
         },
         {
           id: "4",
           preview: Preview4,
           title: "Sneakers",
-          tag: "web",
+          tag: "evento",
+          arc: archivo4
         },
         {
           id: "5",
           preview: Preview5,
-          title: "Label",
-          tag: "illustrations",
+          title: "mendia",
+          tag: "radio",
+          arc: archivo4
         },
         {
           id: "6",
@@ -62,18 +84,47 @@ class Portfolio extends React.Component {
           id: "7",
           preview: Preview6,
           title: "lemons",
-          tag: "branding",
+          tag: "grafica",
         },
         {
           id: "8",
           preview: Preview6,
           title: "lemons",
-          tag: "branding",
+          tag: "radio",
+        },
+        {
+          id: "9",
+          preview: Preview9,
+          title: "latigo",
+          tag: "evento",
+          arc: archivo9
+        },
+        {
+          id: "10",
+          preview: Preview10,
+          title: "lemons",
+          tag: "grafica",
+          arc: archivo10,
+        },
+        {
+          id: "11",
+          preview: Preview11,
+          title: "gulf",
+          tag: "via",
+          arc: archivo11,
+        },
+        {
+          id: "12",
+          preview: Preview12,
+          title: "gulf",
+          tag: "grafica",
+          arc: archivo12
+
         },
       ],
       // PORTFOLIO GALLERY WILL LOAD THIS AFTER FUNCTION "filterGallery" FINISH FILTERING
       filterResult: null,
-      pickedFilter: "all",
+      pickedFilter: "todos",
       filterMenuActive: false,
       pickedFilterDropdown: "NEWEST"
     };
@@ -81,7 +132,7 @@ class Portfolio extends React.Component {
 
   // FIRST LOAD
   componentDidMount() {
-    this.filterGallery("all");
+    this.filterGallery("todos");
   }
 
   //FILTER PORTFOLIO FUNCTION
@@ -89,7 +140,7 @@ class Portfolio extends React.Component {
     let projectsArr = [...this.state.projects];
     let result;
 
-    if (target !== "all") {
+    if (target !== "todos") {
       result = projectsArr.filter((project) => project.tag === target);
     } else {
       result = projectsArr;
@@ -129,7 +180,7 @@ class Portfolio extends React.Component {
     let projectsRender = null;
     if (this.state.filterResult) {
       projectsRender = this.state.filterResult.map((project) => (
-        <ProjectBox preview={project.preview} key={project.id} title={project.title} tag={project.tag} />
+        <ProjectBox preview={project.preview} key={project.id} title={project.title} tag={project.tag} arc={project.arc} />
       ));
     }
     // PORTFOLIO GALLERY BREAKPOINTS
@@ -161,35 +212,45 @@ class Portfolio extends React.Component {
           <Row>
             <Col xs={12} sm={12} md={8} lg={9}>
               <div className="portfolio__nav">
-                <ul>
-                  <li className={this.state.pickedFilter === "all" ? "portfolio__nav-active font12" : "font12"} onClick={() => this.filterGallery("all")}>
-                    TODOS
-                  </li>
-                  <li
-                    className={this.state.pickedFilter === "branding" ? "portfolio__nav-active font12" : "font12"}
-                    onClick={() => this.filterGallery("branding")}
-                  >
-                    BRANDING
-                  </li>
-                  <li
-                    className={this.state.pickedFilter === "illustrations" ? "portfolio__nav-active font12" : "font12"}
-                    onClick={() => this.filterGallery("illustrations")}
-                  >
-                    ILLUSTRATIONS
-                  </li>
-                  <li className={this.state.pickedFilter === "web" ? "portfolio__nav-active font12" : "font12"} onClick={() => this.filterGallery("web")}>
-                    WEB
-                  </li>
+                <ul className="lista">
+                  <div className="primero">
+                    <li className={this.state.pickedFilter === "todos" ? "portfolio__nav-active font8" : "font8"} onClick={() => this.filterGallery("todos")}>
+                      TODOS
+                    </li>
+                    <li
+                      className={this.state.pickedFilter === "produccion" ? "portfolio__nav-active font8" : "font8"}
+                      onClick={() => this.filterGallery("produccion")}
+                    >
+                      PRODUCCIÓN
+                    </li>
+                    <li
+                      className={this.state.pickedFilter === "radio" ? "portfolio__nav-active font7" : "font7"}
+                      onClick={() => this.filterGallery("radio")}
+                    >
+                      RADIO
+                    </li>
+                  </div>
+                  <div className="primero">
+                    <li className={this.state.pickedFilter === "grafica" ? "portfolio__nav-active font7" : "font7"} onClick={() => this.filterGallery("grafica")}>
+                      GRAFICA
+                    </li>
+                    <li className={this.state.pickedFilter === "via" ? "portfolio__nav-active font7" : "font7"} onClick={() => this.filterGallery("via")}>
+                      V.PUBLICA
+                    </li>
+                    <li className={this.state.pickedFilter === "eventos" ? "portfolio__nav-active font7" : "font7"} onClick={() => this.filterGallery("evento")}>
+                      E.CULTURAL
+                    </li>
+                  </div>
                 </ul>
               </div>
             </Col>
-            <Col xs={12} sm={12} md={4} lg={3}>
+            {/* <Col xs={12} sm={12} md={4} lg={3}>
               <div className="portfolio__filter" onMouseEnter={() => this.filterMenuHover(true)} onMouseLeave={() => this.filterMenuHover(false)}>
                 <p className="font12">{this.state.pickedFilterDropdown} FIRST</p>
                 <img src={Arrow} alt="arrow" />
                 {filterDroppDown}
               </div>
-            </Col>
+            </Col> */}
           </Row>
           <Masonry breakpointCols={portfolioBreakpoints} className="my-masonry-grid" columnClassName="mint__gallery">
             {projectsRender}

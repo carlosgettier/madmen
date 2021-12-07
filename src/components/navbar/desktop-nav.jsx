@@ -31,11 +31,11 @@ const desktopNav = (props) => (
             </Link>
           </li>
 
-          <li>
+          {/* <li>
             <Link activeClass="active-link" to="blog" spy={true} smooth={true} offset={-70} duration={500}>
               BLOG
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link activeClass="active-link" to="contact" spy={true} smooth={true} offset={-70} duration={500}>
               CONTACTO

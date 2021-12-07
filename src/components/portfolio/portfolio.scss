@@ -1,4 +1,4 @@
-@import '../../style/App.scss';
+@import "../../style/App.scss";
 
 #portfolio {
   padding: 20px 0 40px 0;
@@ -19,6 +19,12 @@
     .portfolio__nav-active {
       background-color: $main-color;
     }
+  }
+  .primero {
+    display: flex;
+  }
+  .lista {
+    display: flex;
   }
   .portfolio__filter {
     display: flex;
@@ -68,9 +74,10 @@
   padding-left: 30px; /* gutter size */
   background-clip: padding-box;
 }
- 
+
 /* Style your items */
-.mint__gallery > div { /* change div to reference your elements you put in <Masonry> */
+.mint__gallery > div {
+  /* change div to reference your elements you put in <Masonry> */
   margin-bottom: 30px;
 }
 
@@ -78,15 +85,18 @@
   #portfolio {
     .portfolio__nav {
       ul {
-        justify-content: center;
+        justify-content: left;
       }
+    }
+    .lista {
+      display: flex;
+      flex-direction: column;
     }
     .portfolio__filter {
       justify-content: center;
       max-width: 200px;
       margin: 30px auto;
       float: none;
-
     }
   }
 }
@@ -99,7 +109,6 @@
           padding: 5px 5px;
           margin-right: 5px;
         }
-
       }
     }
   }
