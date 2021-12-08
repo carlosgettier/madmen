@@ -3,11 +3,13 @@ import { Row, Col } from "react-flexbox-grid";
 import "./about.scss";
 // Components
 import TeamBox from './teamBox';
+import TeamBoxVideo from "./teamBoxVideo";
 import TeamInfo from "./teamInfo";
 import Title from "../ui-components/title/title";
 // Assets
-import Person01 from "../../assets/about/person01.jpg";
+import Person01 from "../../assets/video/WhatsApp.mp4";
 import Person02 from "../../assets/about/person02.jpg";
+import { teamBoxVideo } from "./teamBoxVideo";
 
 const about = () => (
   <div id="about">
@@ -20,7 +22,7 @@ const about = () => (
       </p>
       <Row>
         <Col md={12} lg={4}>
-          <TeamBox avatar={Person01} name="sebastian" job="Web designer" />
+          <TeamBoxVideo avatar={Person01} name="sebastian" job="Web designer" />
         </Col>
         <Col md={12} lg={4}>
           <TeamBox avatar={Person02} name="Han Solo" job="Graphic Designer" />
